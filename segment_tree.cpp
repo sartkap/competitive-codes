@@ -23,6 +23,7 @@ using namespace std;
 vi v(0);
 vi a(0);
 int n;
+//very efficient implementation
 void build(){
 	rep(i,n)v[i+n]=a[i];
 	repba(i,n-1,1)v[i]=v[i<<1]+v[i<<1|1];
