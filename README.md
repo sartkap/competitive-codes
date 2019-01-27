@@ -1,2 +1,2 @@
 # competitive-codes
-codes of popular problems in competitive programming in C++
+Codes of popular problems/implementation of basic data structures for competitive programming in C++
