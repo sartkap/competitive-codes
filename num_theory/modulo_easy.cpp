@@ -1,13 +1,15 @@
+using uint=unsigned;
+using ull=unsigned long long;
 struct mint{
 	uint v;
-	mint(ll vv=0){s(vv%mod+mod);}
-	mint& s(uint vv){
+	mint(ll vv=0){s1(vv%mod+mod);}
+	mint& s1(uint vv){
 		v=vv<mod?vv:vv-mod;
 		return *this;
 	}
 	mint operator-()const{return mint()-*this;}
-	mint& operator+=(const mint&rhs){return s(v+rhs.v);}
-	mint&operator-=(const mint&rhs){return s(v+mod-rhs.v);}
+	mint& operator+=(const mint&rhs){return s1(v+rhs.v);}
+	mint&operator-=(const mint&rhs){return s1(v+mod-rhs.v);}
 	mint&operator*=(const mint&rhs){
 		v=ull(v)*rhs.v%mod;
 		return *this;
@@ -27,13 +29,6 @@ struct mint{
 		return res;
 	}
 	mint inv()const{return pow(mod-2);}
-	/*mint inv()const{
-		int x,y;
-		int g=extgcd(v,mod,x,y);
-		assert(g==1);
-		if(x<0)x+=mod;
-		return mint(x);
-	}*/
 	friend ostream& operator<<(ostream&os,const mint&m){
 		return os<<m.v;
 	}
