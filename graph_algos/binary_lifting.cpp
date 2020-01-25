@@ -1,3 +1,9 @@
+const int maxn = 1e5 + 10;
+const int maxlog = 20;
+int timer;
+int d[maxn];
+vi tin(maxn),tout(maxn);
+int up[10+maxn][maxlog];
 void dfs1(int u,int p){
     timer++;
     tin[u] = timer;
