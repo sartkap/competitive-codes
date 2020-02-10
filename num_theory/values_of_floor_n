@@ -1,0 +1,9 @@
+int m = ceil(sqrt(n));
+repa(i,1,n/(m+1) + 1){
+    	// value -> (n/i)
+      // number of occurance = 1
+}
+repa(i,1,m+1){
+      // let k = n/i  ,value -> i, number of occurances -> (floor(n/k)) - (floor(n/(k+1))+1) + 1
+      // smallest value with ans = i -> floor(n/(k+1)) + 1, largest value with ans = i -> floor(n/k)
+}
