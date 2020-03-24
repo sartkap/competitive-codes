@@ -91,6 +91,22 @@ int main() {
 	}
 	rep(i,N){
 		cout<<f[i]<<" ";
+		f[i] = 0;
+	}
+	cout<<"\n";
+	
+	// SOS DP Space Optimized Code 
+	// -------------------Always Use this---------------------
+	rep(i,N)f[i] = v[i];
+	rep(i,n){
+		rep(mask,(1<<n)){
+			if(mask & (1<<i)){
+				f[mask] += f[mask ^ (1<<i)];
+			}
+		}	
+	}	
+	rep(mask,N){
+		cout<<f[mask]<<" ";
 	}
 	return 0;
 }
