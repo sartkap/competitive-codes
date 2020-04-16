@@ -56,7 +56,7 @@ int main() {
 	}
 	vi ans(0);
 	int m = s(s);
-	repa(i,m+2,len){
+	repa(i,m+1,len){
 		if(phi[i] == m){
 			ans.pb(i-2*m);
 		}
