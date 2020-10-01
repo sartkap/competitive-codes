@@ -66,7 +66,7 @@ int find_set(int u){
 	if(u == p[u]){
 		return u;
 	}
-	return p[u] = find_set(p[u]);
+	return (p[u] = find_set(p[u]));
 }
 void union_set(int a,int b){
 	a = find_set(a);
@@ -83,6 +83,17 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
+	
+	// testing code added
+	int n; cin >> n;
+	for (int i = 0; i < n; ++i) {
+		make_set(i);
+	}
+	for (int i = 0; i < n - 1; ++i) {
+		union_set(i, i + 1);
+	}
+	cout << size[0]; // testing line, remove finally
+	
 	
 	return 0;
 }
