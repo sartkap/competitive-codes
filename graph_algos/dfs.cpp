@@ -26,15 +26,15 @@ ll gcd(ll a,ll b){
 	return gcd(b,a%b);
 }
 int max_si = 10000;
-vi v[10000];
-vector<bool> visited(max_si,false);
+vi adj[10000];
+vector<bool> vis(max_si,false);
 void dfs(int u){
-	if(visited[u])return;
-	visited[u]=true;
+	if(vis[u])return;
+	vis[u]=true;
 	//**************place to process node
-	cout<<u;
-	for(auto t:v[u]){
-		dfs(t);
+	cout<<u; // optional: remove before submitting, if something else processed
+	for(auto neigh:adj[u]){
+		dfs(neigh);
 	}
 }
 int main(){
@@ -46,10 +46,12 @@ int main(){
 	int x,y;
 	rep(i,m){
 		cin>>x>>y;
-		v[x].pb(y);
+		adj[x].pb(y);
 	}
+	int cnt = 0; // count of unconnected components
 	repa(i,1,n+1){//*********so that no node is left
-		if(!visited[i])dfs(i);
+		
+		if(!vis[i]){ cnt++; dfs(i);}
 	}
 	dfs(1);
 	return 0;
